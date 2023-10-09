@@ -380,3 +380,21 @@ h1 .searchItem {
   right: 5%;
 }
 
+.dots {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.dots .dot {
+  padding: 5px 15px;
+  border-radius: 50%;
+  border: 5px solid var(--secondary-color);
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 5px;
+}
+
+.dots .dot.active {
+  border-color: orange;
+}
