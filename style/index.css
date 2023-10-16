@@ -3,6 +3,17 @@ body{
     color: #008080;
 }
 
+hr{
+  height: 20%;
+}
+#text{
+  margin-left: 100px;
+  color: white;
+}
+#text2{
+  margin-left: 100px;
+  color: white;
+}
 /* background image  ---------------------- */
 #sign_in_image{
     width: 100%;
@@ -32,7 +43,7 @@ h1, h2, h3{
 
 /* footer ----------------------*/
 #footer{
-  background-color:#708090;
+  background-color:#515e6b54;
   color: white;
 }
 
@@ -41,6 +52,7 @@ h1, h2, h3{
   height: 150px;
   vertical-align: middle;
   border-radius: 5px;
+  opacity: 50%;
 }
 
 /* Container holding the image and the text */
