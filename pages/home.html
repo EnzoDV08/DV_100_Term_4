@@ -15,22 +15,30 @@
 <body>
     <div class="navbar">
         <div  class="navbar-container">
-            <div  class="logo-container"><h1>Hub</h1></div>
+            <div class="logo-container">
+                <img class="logo" src="logo.jpg" alt="Logo">
+            </div>
             <div  class="menu-container">
                 <ul class="menu-list">
                     <li class="menu-list-item active">Home</li>
                     <li class="menu-list-item">Movie</li>
                     <li class="menu-list-item">Series</li>
-                    <li class="menu-list-item">Popular</li>
+                    <li class="menu-list-item"><a href="/pages/library.html">Library</a></li>
                     <li class="menu-list-item">Trends</li>
                 </ul>
             </div>
-            <div  class="profile-container">
+            <div class="profile-container">
                 <img class="profile-picture" src="/images/profile.png" alt="">
-                <div class="profile-text-container">
+                <div class="profile-text-container" id="profileDropdownButton">
                     <span class="profile-text">Profile</span>
                     <i class="fa-solid fa-sort-down"></i>
                 </div>
+                <div class="profile-dropdown" id="profileDropdownContent">
+                    <a href="#">My Account</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Log Out</a>
+                </div>
+            </div>
                 <div class="toggle">
                     <i class="fa-solid fa-moon toggle-icon"></i>
                     <i class="fa-solid fa-sun toggle-icon"></i>
@@ -65,39 +73,294 @@
                         <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
                         <span class="movie-list-item-title">Midsommar</span>
                         <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
-                        <button class="movie-list-item-button"></button>
+                        <button class="movie-list-item-button">Watch</button>
                     </div>
                     <div class="movie-list-item">
                         <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
                         <span class="movie-list-item-title">Midsommar</span>
                         <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
-                        <button class="movie-list-item-button"></button>
+                        <button class="movie-list-item-button">Watch</button>
                     </div>
                     <div class="movie-list-item">
                         <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
                         <span class="movie-list-item-title">Midsommar</span>
                         <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
-                        <button class="movie-list-item-button"></button>
+                        <button class="movie-list-item-button">Watch</button>
                     </div>
                     <div class="movie-list-item">
                         <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
                         <span class="movie-list-item-title">Midsommar</span>
                         <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
-                        <button class="movie-list-item-button"></button>
+                        <button class="movie-list-item-button">Watch</button>
                     </div>
                     <div class="movie-list-item">
                         <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
                         <span class="movie-list-item-title">Midsommar</span>
                         <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
-                        <button class="movie-list-item-button"></button>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
                     </div>
                 </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
             </div>
         </div>
-           </div>
+        <div class="featured-content" 
+        style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url(/images/s-l1600.jpg);">
+        <img class="featured-title" src="/images/1917-Movie-Poster.jpg" alt="">
+        <p class="featured-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vero voluptates praesentium qui explicabo cupiditate velit porro cum, eaque libero aliquid impedit, eum aspernatur numquam nesciunt! Pariatur quae provident doloremque.</p>
+        <button class="featured-button">Watch</button>
+   </div>
+        <div class="movie-list-container">
+            <h1 class="movie-list-title">NEW RELEASES</h1>
+            <div class="movie-list-wrapper">
+                <div class="movie-list">
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </div>
         </div>
+        <div class="movie-list-container">
+            <h1 class="movie-list-title">NEW RELEASES</h1>
+            <div class="movie-list-wrapper">
+                <div class="movie-list">
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </div>
+        </div>
+        <div class="movie-list-container">
+            <h1 class="movie-list-title">NEW RELEASES</h1>
+            <div class="movie-list-wrapper">
+                <div class="movie-list">
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="/images/midsommar.jpg" alt="">
+                        <span class="movie-list-item-title">Midsommar</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est distinctio officiis dicta consequuntur impedit ipsa dignissimos cupiditate rerum voluptatibus odit mollitia nam laboriosam quaerat eos, deserunt aperiam in maxime.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </div>
+        </div>
+        
+           </div>
+           
+        </div>
+        
     </div>
-
+    <script src="/script/home.js">
+        document.addEventListener('DOMContentLoaded', function() {
+            var user = JSON.parse(localStorage.getItem('user'));
+        
+            if (user) {
+                var emailElement = document.getElementById('userEmail');
+                if (emailElement) {
+                    emailElement.innerText = user.email;
+                }
+            }
+        });
+        </script>
   
 </body>
 </html>

@@ -106,42 +106,42 @@
 </footer>
 <script>
 function showCustomAlert(message) {
-            document.getElementById('alertMessage').innerHTML = message;
-            document.getElementById('customAlert').style.display = 'block';
-        }
+    document.getElementById('alertMessage').innerHTML = message;
+    document.getElementById('customAlert').style.display = 'block';
+}
 
-        function hideCustomAlert() {
-            document.getElementById('customAlert').style.display = 'none';
-        }
+function hideCustomAlert() {
+    document.getElementById('customAlert').style.display = 'none';
+}
 
-        document.getElementById('signUp').addEventListener('click', function() {
-            var email = document.getElementById('exampleFormControlInput1').value;
-            var password = document.getElementById('password').value;
-            var confirmPassword = document.getElementById('confirmPassword').value;
+function signUp() {
+    var email = document.getElementById('exampleFormControlInput1').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
 
-            // Confirm Password
-            if (password !== confirmPassword) {
-                showCustomAlert('Passwords do not match.');
-                return; // Exit the function, preventing form submission and redirection
-            }
+    // Confirm Password
+    if (password !== confirmPassword) {
+        showCustomAlert('Passwords do not match.');
+        return;
+    }
 
-            // Password Validation
-            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-            if (!passwordRegex.test(password)) {
-                showCustomAlert('Password must contain at least 1 number, 1 uppercase letter, 1 lowercase letter, and be at least 8 characters long.');
-                return; // Exit the function, preventing form submission and redirection
-            }
+    // Password Validation
+    var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+    if (!passwordRegex.test(password)) {
+        showCustomAlert('Password must contain at least 1 number, 1 uppercase letter, 1 lowercase letter, and be at least 8 characters long.');
+        return;
+    }
 
-            // Store User Data in Local Storage
-            var user = {
-                email: email,
-                password: password
-            };
-            localStorage.setItem('user', JSON.stringify(user));
+    var user = {
+        email: email,
+        password: password
+    };
+    localStorage.setItem('user', JSON.stringify(user));
 
-            // Redirect to Home Page
-            window.location.href = '/pages/home.html';
-        });
+    window.location.href = '/pages/home.html';
+}
+
+document.getElementById('signUp').addEventListener('click', signUp);
 </script>
 
 </body>

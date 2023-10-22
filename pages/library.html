@@ -5,27 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="library.css"/>
+    <link rel="stylesheet" href="/style/library.css"/>
 
-    <title>CinemaniaHub</title>
+    <title>CinemaniaHubs</title>
   </head>
  
   <body>
-    <header>
-      <img class="logo" src="/images/logo.png" alt="Logo" />
-      <form id="form">
-        <input
-          type="text"
-          placeholder="Search Any Movie"
-          autocomplete="off"
-          id="search"
-          class="search"
-        /><i class="fas fa-search"></i>
-      </form>
-    </header>
+    <div class="navbar">
+      <div  class="navbar-container">
+          <div class="logo-container">
+              <img class="logo" src="logo.jpg" alt="Logo">
+          </div>
+          <div  class="menu-container">
+              <ul class="menu-list">
+                  <li class="menu-list-item active">Home</li>
+                  <li class="menu-list-item">Movie</li>
+                  <li class="menu-list-item">Series</li>
+                  <li class="menu-list-item"><a href="/pages/library.html">Library</a></li>
+                  <li class="menu-list-item">Trends</li>
+              </ul>
+          </div>
+          <div class="profile-container">
+              <img class="profile-picture" src="/images/profile.png" alt="">
+              <div class="profile-text-container" id="profileDropdownButton">
+                  <span class="profile-text">Profile</span>
+                  <i class="fa-solid fa-sort-down"></i>
+              </div>
+              <div class="profile-dropdown" id="profileDropdownContent">
+                  <a href="#">My Account</a>
+                  <a href="#">Settings</a>
+                  <a href="#">Log Out</a>
+              </div>
+          </div>
+              <div class="toggle">
+                  <i class="fa-solid fa-moon toggle-icon"></i>
+                  <i class="fa-solid fa-sun toggle-icon"></i>
+                  <div class="toggle-ball"></div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="sidebar">
+      <i class="left-menu-icon fa-solid fa-magnifying-glass"></i>
+      <i class="left-menu-icon fa-solid fa-house"></i>
+      <i class="left-menu-icon fa-solid fa-users-line"></i>
+      <i class="left-menu-icon fa-solid fa-bookmark"></i>
+      <i class="left-menu-icon fa-solid fa-tv"></i>
+      <i class="left-menu-icon fa-solid fa-hourglass"></i>
+      <i class="left-menu-icon fa-solid fa-cart-shopping"></i>
+  </div>
     <div id="tags"></div>
     <div id="myNav" class="overlay">
       <!-- Button to close the overlay navigation -->
@@ -50,36 +79,19 @@
       <div class="current" id="current">1</div>
       <div class="page" id="next">Next Page</div>
     </div>
-
-    <!---Java Script-->
-    <script src="../script/library.js"></script>
-
-    <!------------------Footer------------->
-    <footer id="footer">
-
-        <div class="row" style="margin-top: 20px;">
-          <div class="col-6">
-            <i class="material-icons">cloud</i>
-            <i class="material-icons">favorite</i>
-            <i class="material-icons">attachment</i>
-            <!-- <i class="material-icons">computer</i>
-            <i class="material-icons">traffic</i> -->
-            <h3><img src="/images/logo.png" id="logo"></h3>
-          </div>
+    <script src="/script/library.js"></script>
+    <script src="/script/home.js">
+      document.addEventListener('DOMContentLoaded', function() {
+          var user = JSON.parse(localStorage.getItem('user'));
       
-          <div class="col-6">
-            <h4 id="heading">Contact us. Our team is here to help: CinemaniaHub@gmail.com</h4>
-           
-          </div>
-      
-          
-            
-            
-          
-        </div>
-      
-      </footer>
-
+          if (user) {
+              var emailElement = document.getElementById('userEmail');
+              if (emailElement) {
+                  emailElement.innerText = user.email;
+              }
+          }
+      });
+      </script>
 
   </body>
 </html>
