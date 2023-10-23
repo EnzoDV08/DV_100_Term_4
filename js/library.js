@@ -417,3 +417,35 @@ document.getElementById("profileDropdownButton").addEventListener("click", funct
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Load movies from localStorage
+  const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+
+  // Get the container to display watchlist
+  const watchlistContainer = document.getElementById('watchlist');
+
+  // Loop through each movie in the watchlist
+  watchlist.forEach(movieId => {
+    // Make an API request to get individual movie data
+    fetch(`https://api.example.com/movie/${movieId}`)
+      .then(response => response.json())
+      .then(movieData => {
+        // Create HTML elements for the movie data
+        const movieElement = document.createElement('div');
+        movieElement.classList.add('movie-list-item');
+
+        const titleElement = document.createElement('h2');
+        titleElement.textContent = movieData.title;
+
+        const descriptionElement = document.createElement('p');
+        descriptionElement.textContent = movieData.description;
+
+        // Add the elements to the watchlist container
+        movieElement.appendChild(titleElement);
+        movieElement.appendChild(descriptionElement);
+        watchlistContainer.appendChild(movieElement);
+      })
+      .catch(error => console.error('Error fetching movie data:', error));
+  });
+});
+

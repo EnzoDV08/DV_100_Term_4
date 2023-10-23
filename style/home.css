@@ -323,6 +323,17 @@ body{
     cursor: pointer;
 }
 
+.arrow-left {
+    font-size: 120px;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    color: light grey;
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 20;
+}
+
 .container.active{
     background-color: white;
 }
