@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
-:root {
-  --primary-color: #22254b;
-  --secondary-color: #373b69;
-}
+
 
 * {
   box-sizing: border-box;
@@ -44,7 +41,6 @@ body {
 
 body{
   background-color: #000000;
-  color: #008080;
 }
 
 
@@ -85,11 +81,11 @@ i fas fa-play {
   outline: none;
   border: none;
   font-family: inherit;
-    font-size: 15px;
-    color: white;
-    height: 20px;
-    margin: 5px;
-    justify-content: center;
+  font-size: 15px;
+  color: white;
+  height: 20px;
+  margin: 5px;
+  justify-content: center;
 }
 
 .search::placeholder {
@@ -156,6 +152,7 @@ main {
   transition: transform 0.3s ease-in;
   cursor: pointer;
   user-select: none;
+  color: #008080;
 }
 
 .overview h3 {

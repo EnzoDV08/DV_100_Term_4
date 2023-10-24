@@ -1,3 +1,8 @@
+const API_KEY = "api_key=1cf50e6248dc270629e802686245c2c8";
+const BASE_URL = "https://api.themoviedb.org/3";
+const API_URL = BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
+const IMG_URL = "https://image.tmdb.org/t/p/w500";
+
 const arrows = document.querySelectorAll(".arrow");
 const movieLists = document.querySelectorAll(".movie-list");
 const arrowsRight = document.querySelectorAll('.fa-chevron-right');
@@ -61,11 +66,6 @@ document.getElementById("profileDropdownButton").addEventListener("click", funct
     }
 });
 
-const API_KEY = "api_key=1cf50e6248dc270629e802686245c2c8";
-const BASE_URL = "https://api.themoviedb.org/3";
-const API_URL = BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
-const IMG_URL = "https://image.tmdb.org/t/p/w500";
-
 // Function to fetch movies
 async function fetchMovies() {
   try {
@@ -80,43 +80,42 @@ async function fetchMovies() {
 
 // Function to update HTML with movie data
 function updateMoviesOnHomepage(movies, container) {
+    const main = document.querySelector('.movie-list');
     const movieListContainer = document.querySelector('.movie-list');
     movieListContainer.innerHTML = '';
-
+    
     movies.forEach(movie => {
+        const { title, poster_path, vote_average, overview, id } = movie;
         const movieListItem = document.createElement('div');
-        movieListItem.classList.add('movie-list-item');
+        movieListItem.classList.add("movie");
 
-        const movieImg = document.createElement('img');
-        movieImg.classList.add('movie-list-item-img');
-        movieImg.src = IMG_URL + movie.poster_path;
-        movieImg.alt = movie.title;
+        const shortOverview = overview.length > 100 ? overview.substring(0, 100) + '...' : overview;
 
-        const movieTitle = document.createElement('span');
-        movieTitle.classList.add('movie-list-item-title');
-        movieTitle.textContent = movie.title;
-
-        const movieDesc = document.createElement('p');
-        movieDesc.classList.add('movie-list-item-desc');
-        movieDesc.textContent = movie.overview;
-
-        const movieRating = document.createElement('span'); // Create a new element for rating
-        movieRating.classList.add('movie-list-item-rating');
-        movieRating.textContent = `Rating: ${movie.vote_average}`;
-
-        const watchButton = document.createElement('button');
-        watchButton.classList.add('movie-list-item-button');
-        watchButton.textContent = 'Watch';
-
-        movieListItem.appendChild(movieImg);
-        movieListItem.appendChild(movieTitle);
-        movieListItem.appendChild(movieDesc);
-        movieListItem.appendChild(movieRating); // Append the rating element
-        movieListItem.appendChild(watchButton);
-
-        movieListContainer.appendChild(movieListItem);
+        
+        movieListItem.innerHTML = `
+                <img src="${
+                poster_path ? IMG_URL + poster_path : "/assets/cinema.jpg"
+                }" alt="${title}">
+            <div class="movie-info">
+                <h3>${movie.title}</h3>
+              
+            </div>
+            <div class="overview">
+                <h3>${title}</h3>
+                ${shortOverview}
+                <br/> 
+                <button class="know-more" id="${id}">Watch Trailer <i class="fas fa-arrow-right"></i></button
+            </div>
+        `;
+        main.appendChild(movieListItem);
+    
+        document.getElementById(id).addEventListener("click", () => {
+            console.log(id);
+            openNav(movie);
+          });
     });
 }
+
 // Fetch movies and update homepage
 fetchMovies().then(movies => {
   const movieListContainer = document.querySelector('#new-releases .movie-list');
@@ -124,3 +123,53 @@ fetchMovies().then(movies => {
 });
 
 
+// async function fetchMoviesFromAPI() {
+//     try {
+//       const response = await fetch('YOUR_API_URL'); // Replace 'YOUR_API_URL' with your actual API endpoint
+//       const data = await response.json();
+//       return data; // Make sure your API returns an array of movie objects
+//     } catch (error) {
+//       console.error('Error fetching movies:', error);
+//       return [];
+//     }
+//   }
+
+// fetchLatestMovie().then(movie => {
+//     upd4ateFeaturedContent(movie);
+// });
+
+
+// Show Movies Images & Info
+function showMovies(data) {
+    div.innerHTML = "";
+  
+    data.forEach((movie) => {
+      const { title, poster_path, vote_average, overview, id } = movie;
+      const movieEl = document.createElement("div");
+      movieEl.classList.add("movie");
+      movieEl.innerHTML = `
+               <img src="${
+                 poster_path ? IMG_URL + poster_path : "/assets/cinema.jpg"
+               }" alt="${title}">
+              <div class="movie-info">
+                  <h3>${title}</h3>
+                  <span class="${getColor(vote_average)}">${vote_average}</span>
+              </div>
+              <div class="overview">
+                  <h3>${title}</h3>
+                  ${overview}
+                  <br/> 
+                  <button class="know-more" id="${id}">Watch Trailer <i class="fas fa-arrow-right"></i></button
+              </div>
+          
+          `;
+  
+      div.appendChild(movieEl);
+  
+      document.getElementById(id).addEventListener("click", () => {
+        console.log(id);
+        openNav(movie);
+    });
+  });
+}
+  

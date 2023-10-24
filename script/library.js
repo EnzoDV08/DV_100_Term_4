@@ -203,6 +203,7 @@ function getMovies(url) {
       }
     });
 }
+
 // Show Movies Images & Info
 function showMovies(data) {
   main.innerHTML = "";
@@ -211,6 +212,7 @@ function showMovies(data) {
     const { title, poster_path, vote_average, overview, id } = movie;
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
+    
     movieEl.innerHTML = `
              <img src="${
                poster_path ? IMG_URL + poster_path : "/assets/cinema.jpg"
@@ -225,7 +227,6 @@ function showMovies(data) {
                 <br/> 
                 <button class="know-more" id="${id}">Watch Trailer <i class="fas fa-arrow-right"></i></button
             </div>
-        
         `;
 
     main.appendChild(movieEl);
