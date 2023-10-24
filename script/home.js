@@ -80,41 +80,47 @@ async function fetchMovies() {
 
 // Function to update HTML with movie data
 function updateMoviesOnHomepage(movies, container) {
-  const movieListContainer = document.querySelector('.movie-list');
-  movieListContainer.innerHTML = '';
+    const movieListContainer = document.querySelector('.movie-list');
+    movieListContainer.innerHTML = '';
 
-  movies.forEach(movie => {
-    const movieListItem = document.createElement('div');
-    movieListItem.classList.add('movie-list-item');
+    movies.forEach(movie => {
+        const movieListItem = document.createElement('div');
+        movieListItem.classList.add('movie-list-item');
 
-    const movieImg = document.createElement('img');
-    movieImg.classList.add('movie-list-item-img');
-    movieImg.src = IMG_URL + movie.poster_path;
-    movieImg.alt = movie.title;
+        const movieImg = document.createElement('img');
+        movieImg.classList.add('movie-list-item-img');
+        movieImg.src = IMG_URL + movie.poster_path;
+        movieImg.alt = movie.title;
 
-    const movieTitle = document.createElement('span');
-    movieTitle.classList.add('movie-list-item-title');
-    movieTitle.textContent = movie.title;
+        const movieTitle = document.createElement('span');
+        movieTitle.classList.add('movie-list-item-title');
+        movieTitle.textContent = movie.title;
 
-    const movieDesc = document.createElement('p');
-    movieDesc.classList.add('movie-list-item-desc');
-    movieDesc.textContent = movie.overview;
+        const movieDesc = document.createElement('p');
+        movieDesc.classList.add('movie-list-item-desc');
+        movieDesc.textContent = movie.overview;
 
-    const watchButton = document.createElement('button');
-    watchButton.classList.add('movie-list-item-button');
-    watchButton.textContent = 'Watch';
+        const movieRating = document.createElement('span'); // Create a new element for rating
+        movieRating.classList.add('movie-list-item-rating');
+        movieRating.textContent = `Rating: ${movie.vote_average}`;
 
-    movieListItem.appendChild(movieImg);
-    movieListItem.appendChild(movieTitle);
-    movieListItem.appendChild(movieDesc);
-    movieListItem.appendChild(watchButton);
+        const watchButton = document.createElement('button');
+        watchButton.classList.add('movie-list-item-button');
+        watchButton.textContent = 'Watch';
 
-    movieListContainer.appendChild(movieListItem);
-  });
+        movieListItem.appendChild(movieImg);
+        movieListItem.appendChild(movieTitle);
+        movieListItem.appendChild(movieDesc);
+        movieListItem.appendChild(movieRating); // Append the rating element
+        movieListItem.appendChild(watchButton);
+
+        movieListContainer.appendChild(movieListItem);
+    });
 }
-
 // Fetch movies and update homepage
 fetchMovies().then(movies => {
   const movieListContainer = document.querySelector('#new-releases .movie-list');
   updateMoviesOnHomepage(movies, movieListContainer);
 });
+
+

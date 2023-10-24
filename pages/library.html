@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <link rel="stylesheet" href="/style/library.css"/>
+    <link rel="stylesheet" href="/style/home.css">
 
     <title>CinemaniaHubs</title>
   </head>
@@ -18,11 +19,11 @@
           </div>
           <div  class="menu-container">
               <ul class="menu-list">
-                  <li class="menu-list-item active"><a href="/pages/home.html">Home</a></li>
+                  <li class="menu-list-item "><a href="/pages/home.html">Home</a></li>
                   <li class="menu-list-item">Movie</li>
-                  <li class="menu-list-item" >Series</li>
-                  <li class="menu-list-item"><a href="/pages/library.html">Library</a></li>
-                  <li class="menu-list-item">Trends</li>
+                  <li class="menu-list-item">Series</li>
+                  <li class="menu-list-item active">Library</a></li>
+                  <li class="menu-list-item">Watchlist</li>
               </ul>
           </div>
           <div class="profile-container">
@@ -34,7 +35,7 @@
               <div class="profile-dropdown" id="profileDropdownContent">
                   <a href="#">My Account</a>
                   <a href="#">Settings</a>
-                  <a href="#">Log Out</a>
+                  <a href="/index.html">Log Out</a>
               </div>
           </div>
               <div class="toggle">
@@ -92,6 +93,17 @@
           }
       });
       </script>
-
+ <script src="/script/home.js">
+  document.addEventListener('DOMContentLoaded', function() {
+      var user = JSON.parse(localStorage.getItem('user'));
+  
+      if (user) {
+          var emailElement = document.getElementById('userEmail');
+          if (emailElement) {
+              emailElement.innerText = user.email;
+          }
+      }
+  });
+  </script>
   </body>
 </html>

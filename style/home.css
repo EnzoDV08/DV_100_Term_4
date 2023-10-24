@@ -260,14 +260,14 @@ body{
     border-radius: 20px;
 }
 
-.movie-list-item-title{
+.movie-list-item-title {
     background-color: #333;
     padding: 0 10px;
     font-size: 32px;
     font-weight: bold;
     position: absolute;
     top: 10%;
-    left: 50px;
+    left: 10px;
     opacity: 0;
     transition: 1s all ease-in-out;
 }
@@ -275,28 +275,28 @@ body{
 .movie-list-item-title{
     background-color: #333;
     padding: 0 10px;
-    font-size: 32px;
+    font-size: 25px;
     font-weight: bold;
     position: absolute;
     top: 10%;
-    left: 50px;
+    left: 10px;
     opacity: 0;
 }
 
-.movie-list-item-desc{
+.movie-list-item-desc {
     background-color: #333;
     padding: 10px;
-    font-size: 14px;
+    font-size: 12px;
     position: absolute;
     top: 30%;
-    left: 50px;
+    left: 10px;
     opacity: 0;
     width: 230px;
 }
 
-.movie-list-item-button{
-    padding: 10px;
-    background-color: green;
+.movie-list-item-button {
+    padding: 10px 20px;
+    background-color: #333; 
     color: white;
     border-radius: 10px;
     outline: none;
@@ -304,8 +304,14 @@ body{
     cursor: pointer;
     position: absolute;
     bottom: 20px;
-    left: 50px;
+    left: 20px;
+    transition: background-color 0.3s; 
+    font-size: 16px; 
+}
 
+.movie-list-item-button:hover {
+    background-color:#008080; 
+    transform: scale(1.05); 
 }
 
 #userEmail {
@@ -412,4 +418,29 @@ body{
 
 .profile-container:hover .profile-dropdown {
     display: block;
+}
+
+.movie-list-item-rating {
+    color: #008080; 
+    font-size: 16px; 
+    font-weight: bold; 
+    margin-top: 5px; 
+}
+
+.movie-list-item-watchlist-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 90px; /* Adjust the left position as needed */
+    transition: background-color 0.3s ease;
+}
+
+.movie-list-item-watchlist-button:hover {
+    background-color: #0056b3; /* Change color on hover if desired */
 }
