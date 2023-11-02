@@ -7,6 +7,7 @@
     
     <link rel="stylesheet" href="/style/library.css"/>
     <link rel="stylesheet" href="/style/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
 
     <title>CinemaniaHubs</title>
   </head>
@@ -23,7 +24,7 @@
                   <li class="menu-list-item">Movie</li>
                   <li class="menu-list-item">Series</li>
                   <li class="menu-list-item active">Library</a></li>
-                  <li class="menu-list-item">Watchlist</li>
+                  <li class="menu-list-item"><a href="/pages/watchlist.html">Watchlist</a></li>
               </ul>
           </div>
           <div class="profile-container">
@@ -82,6 +83,26 @@
       <div class="current" id="current">1</div>
       <div class="page" id="next">Next Page</div>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="/images/logo.png" alt="Logo">
+          </div>
+          <ul class="footer-links">
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Social</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <ul>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    
     <script src="/script/library.js"></script>
     <script src="/script/home.js">
       document.addEventListener('DOMContentLoaded', function() {
@@ -95,7 +116,6 @@
           }
       });
       </script>
- <script src="/script/home.js">
   document.addEventListener('DOMContentLoaded', function() {
       var user = JSON.parse(localStorage.getItem('user'));
   

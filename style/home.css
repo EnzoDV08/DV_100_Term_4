@@ -24,13 +24,13 @@ body{
 .logo-container {
     flex: 1;
     display: flex;
-    align-items: center; /* Aligns the logo vertically in the center */
-    justify-content: center; /* Aligns the logo horizontally in the center */
+    align-items: center;
+    justify-content: center; 
 }
 
 .logo {
-    max-width: 70%; /* Adjust as needed */
-    height: auto; /* Keeps the aspect ratio of the image */
+    max-width: 70%; 
+    height: auto; 
     display: block;
 }
 
@@ -163,9 +163,9 @@ body{
     border: none;
     outline: none;
     font-weight: bold;
-    cursor: pointer; /* Add a pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition effect */
-    font-size: 16px; /* Adjust the font size */
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    font-size: 16px; 
 }
 
 .featured-button:hover {
@@ -174,7 +174,7 @@ body{
 
 .featured-button:active {
     background-color: gray;
-    transform: translateY(2px); /* Add a slight downward shift on click */
+    transform: translateY(2px); 
 }
 
 
@@ -397,7 +397,7 @@ body{
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    top: 40px; /* Adjust this value to position the dropdown */
+    top: 40px; 
     right: 0;
     border-radius: 8px;
     overflow: hidden;
@@ -436,12 +436,12 @@ body{
     cursor: pointer;
     position: absolute;
     bottom: 20px;
-    left: 90px; /* Adjust the left position as needed */
+    left: 90px; 
     transition: background-color 0.3s ease;
 }
 
 .movie-list-item-watchlist-button:hover {
-    background-color: #0056b3; /* Change color on hover if desired */
+    background-color: #0056b3; 
 }
 
 
@@ -537,5 +537,66 @@ main {
     justify-content: center;
     text-align: center;
     cursor: pointer;
+  }
+
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    margin-bottom: 20px;
+  }
+  
+  .footer-logo img {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    display: block;
+  }
+  
+  .footer-links a:hover {
+    color: #ccc;
+  }
+  
+  .footer-social ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-social li {
+    margin: 0 10px;
+  }
+  
+  .footer-social a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s;
+  }
+  
+  .footer-social i:hover {
+    color: #ccc;
   }
   

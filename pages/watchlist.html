@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Library</title>
+    <title>Watchlist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600;800&display=swap" rel="stylesheet">
@@ -13,23 +13,43 @@
     
 </head>
 <body>
-    <div class="toggle-ball"></div>
-    <div class="container">
-        <div class="navbar-container">
-            <h1 class="movie-list-title">Movie Library</h1>
-            <button id="profileDropdownButton" class="profile-dropdown-button">Profile</button>
-            <div id="profileDropdownContent" class="profile-dropdown-content">
-                <a href="#">My Profile</a>
-                <a href="#">Settings</a>
-                <a href="#">Sign Out</a>
+    <div class="navbar">
+        <div  class="navbar-container">
+            <div class="logo-container">
+                <img class="logo" src="/images/logo.png
+                " alt="Logo">
+            </div>
+            <div  class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item active">Home</li>
+                    <li class="menu-list-item">Movie</li>
+                    <li class="menu-list-item">Series</li>
+                    <li class="menu-list-item"><a href="/pages/library.html">Library</a></li>
+                    <li class="menu-list-item"><a href="/pages/watchlist.html">Watchlist</a></li>
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="/images/profile.png" alt="">
+                <div class="profile-text-container" id="profileDropdownButton">
+                    <span class="profile-text">Profile</span>
+                    <i class="fa-solid fa-sort-down"></i>
+                </div>
+                <div class="profile-dropdown" id="profileDropdownContent">
+                    <a href="#">My Account</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Log Out</a>
+                </div>
+            </div>
+                <div class="toggle">
+                    <i class="fa-solid fa-moon toggle-icon"></i>
+                    <i class="fa-solid fa-sun toggle-icon"></i>
+                    <div class="toggle-ball"></div>
+
+                </div>
             </div>
         </div>
-        <div class="left-menu-icon">
-            <div class="toggle"></div>
-        </div>
-        <div class="sidebar">
-            <div id="tags"></div>
-        </div>
+    </div>
+  
         
     
     
@@ -38,6 +58,8 @@
             <script src="watchlist.js"></script>
     
     <script src="/script/watchlist.js"></script>
+    <script src="/script/home.js"></script>
+    <script src="/script/library.js"></script>
 </body>
 </html>
 

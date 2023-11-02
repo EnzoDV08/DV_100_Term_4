@@ -1,14 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
-    var watchlistElement = document.getElementById('watchlist');
+    const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+    const watchlistContainer = document.getElementById('watchlist');
 
-    watchlist.forEach(function(movieId) {
-        fetch(BASE_URL + "/movie/" + movieId + "?" + API_KEY)
-            .then((res) => res.json())
-            .then((data) => {
-                var listItem = document.createElement('li');
-                listItem.textContent = data.title;
-                watchlistElement.appendChild(listItem);
-            });
+    watchlist.forEach(movieId => {
+        fetch(`https://api.example.com/movie/${movieId}`)
+            .then(response => response.json())
+            .then(movieData => {
+                const movieElement = document.createElement('div');
+                movieElement.classList.add('movie-list-item');
+
+                const titleElement = document.createElement('h2');
+                titleElement.textContent = movieData.title;
+
+                const descriptionElement = document.createElement('p');
+                descriptionElement.textContent = movieData.description;
+
+                movieElement.appendChild(titleElement);
+                movieElement.appendChild(descriptionElement);
+                watchlistContainer.appendChild(movieElement);
+            })
+            .catch(error => console.error('Error fetching movie data:', error));
     });
 });

@@ -81,8 +81,6 @@ async function fetchMovies() {
 // Function to update HTML with movie data
 function updateMoviesOnHomepage(movies, container) {
     const main = document.querySelector('.movie-list');
-    const movieListContainer = document.querySelector('.movie-list');
-    movieListContainer.innerHTML = '';
     
     movies.forEach(movie => {
         const { title, poster_path, vote_average, overview, id } = movie;
@@ -91,28 +89,19 @@ function updateMoviesOnHomepage(movies, container) {
 
         const shortOverview = overview.length > 100 ? overview.substring(0, 100) + '...' : overview;
 
-        
         movieListItem.innerHTML = `
-                <img src="${
-                poster_path ? IMG_URL + poster_path : "/assets/cinema.jpg"
-                }" alt="${title}">
+            <img src="${poster_path ? IMG_URL + poster_path : "/assets/cinema.jpg"}" alt="${title}">
             <div class="movie-info">
                 <h3>${movie.title}</h3>
-              
             </div>
             <div class="overview">
                 <h3>${title}</h3>
                 ${shortOverview}
                 <br/> 
-                <button class="know-more" id="${id}">Watch Trailer <i class="fas fa-arrow-right"></i></button
+                <a href="/pages/individual.html?id=${id}" class="know-more">Watch Trailer</a>
             </div>
         `;
         main.appendChild(movieListItem);
-    
-        document.getElementById(id).addEventListener("click", () => {
-            console.log(id);
-            openNav(movie);
-          });
     });
 }
 
@@ -140,36 +129,37 @@ fetchMovies().then(movies => {
 
 
 // Show Movies Images & Info
-function showMovies(data) {
-    div.innerHTML = "";
+
   
-    data.forEach((movie) => {
-      const { title, poster_path, vote_average, overview, id } = movie;
-      const movieEl = document.createElement("div");
-      movieEl.classList.add("movie");
-      movieEl.innerHTML = `
-               <img src="${
-                 poster_path ? IMG_URL + poster_path : "/assets/cinema.jpg"
-               }" alt="${title}">
-              <div class="movie-info">
-                  <h3>${title}</h3>
-                  <span class="${getColor(vote_average)}">${vote_average}</span>
-              </div>
-              <div class="overview">
-                  <h3>${title}</h3>
-                  ${overview}
-                  <br/> 
-                  <button class="know-more" id="${id}">Watch Trailer <i class="fas fa-arrow-right"></i></button
-              </div>
-          
-          `;
-  
-      div.appendChild(movieEl);
-  
-      document.getElementById(id).addEventListener("click", () => {
-        console.log(id);
-        openNav(movie);
-    });
-  });
+
+async function fetchMovies() {
+    try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error('Error fetching movies:', error);
+        return [];
+    }
 }
-  
+
+
+// Fetch movies and update homepage
+fetchMovies().then(movies => {
+    const movieListContainer = document.querySelector('#new-releases .movie-list');
+    updateMoviesOnHomepage(movies, movieListContainer);
+});
+
+
+async function fetchMovieDetails(movieId) {
+    const MOVIE_URL = `${BASE_URL}/movie/${movieId}?${API_KEY}`;
+    try {
+        const response = await fetch(MOVIE_URL);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching movie details:', error);
+        return null;
+    }
+}
+
