@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watchlist</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style/home.css">
+    <link rel="stylesheet" href="/style/watchlist.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
     
@@ -21,8 +23,8 @@
             </div>
             <div  class="menu-container">
                 <ul class="menu-list">
-                    <li class="menu-list-item active">Home</li>
-                    <li class="menu-list-item">Movie</li>
+                    <li class="menu-list-item active"><a href="/pages/home.html">Home</a></li>
+                    <li class="menu-list-item"><a href="/pages/home.html">Movie</li>
                     <li class="menu-list-item">Series</li>
                     <li class="menu-list-item"><a href="/pages/library.html">Library</a></li>
                     <li class="menu-list-item"><a href="/pages/watchlist.html">Watchlist</a></li>
@@ -37,7 +39,7 @@
                 <div class="profile-dropdown" id="profileDropdownContent">
                     <a href="#">My Account</a>
                     <a href="#">Settings</a>
-                    <a href="#">Log Out</a>
+                    <a href="/index.html">Log Out</a>
                 </div>
             </div>
                 <div class="toggle">
@@ -51,12 +53,19 @@
     </div>
   
         
+    <div class="container">
+        <div class="row" id="watchlistContainer">
+          <!-- Watchlist items will be dynamically added here -->
+        </div>
+      </div>
+      
     
     
-            <h1>My Watchlist</h1>
-            <ul id="watchlist"></ul>
-            <script src="watchlist.js"></script>
-    
+            
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="/script/watchlist.js"></script>
     <script src="/script/home.js"></script>
     <script src="/script/library.js"></script>

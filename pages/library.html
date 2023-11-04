@@ -57,24 +57,9 @@
       <i class="left-menu-icon fa-solid fa-hourglass"></i>
       <i class="left-menu-icon fa-solid fa-cart-shopping"></i>
   </div>
+  
     <div id="tags"></div>
-    <div id="myNav" class="overlay">
-      <!-- Button to close the overlay navigation -->
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-        >&times;</a
-      >
-      <!-- Overlay content -->
-      <div class="overlay-content" id="overlay-content"></div>
-
-      <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow"
-        ><i class="fas fa-arrow-left"></i
-      ></a>
-
-      <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow"
-        ><i class="fas fa-arrow-right"></i
-      ></a>
-    </div>
-
+    
     <!-- Card items generate in Main -->
     <main id="main"></main>
 
@@ -83,6 +68,7 @@
       <div class="current" id="current">1</div>
       <div class="page" id="next">Next Page</div>
     </div>
+
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
@@ -104,18 +90,19 @@
     </footer>
     
     <script src="/script/library.js"></script>
-    <script src="/script/home.js">
-      document.addEventListener('DOMContentLoaded', function() {
-          var user = JSON.parse(localStorage.getItem('user'));
-      
-          if (user) {
-              var emailElement = document.getElementById('userEmail');
-              if (emailElement) {
-                  emailElement.innerText = user.email;
-              }
-          }
-      });
-      </script>
+  <script src="/script/watchlist.js"></script>
+  <script src="/script/home.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var user = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        var emailElement = document.getElementById('userEmail');
+        if (emailElement) {
+          emailElement.innerText = user.email;
+        }
+      }
+    });
+  </script>
   document.addEventListener('DOMContentLoaded', function() {
       var user = JSON.parse(localStorage.getItem('user'));
   

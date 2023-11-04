@@ -99,6 +99,7 @@ function updateMoviesOnHomepage(movies, container) {
                 ${shortOverview}
                 <br/> 
                 <a href="/pages/individual.html?id=${id}" class="know-more">Watch Trailer</a>
+                <a href="/pages/individual.html?id=${id}" class="know-more-then">Add to watch list</a>
             </div>
         `;
         main.appendChild(movieListItem);
@@ -163,3 +164,54 @@ async function fetchMovieDetails(movieId) {
     }
 }
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const watchlistContainer = document.querySelector('.watchlist-container');
+    const watchlist = JSON.parse(localStorage.getItem('watchlist2')) || [];
+
+    if (watchlist.length > 0) {
+        fetchMoviesByIds(watchlist).then(movies => {
+            displayMoviesInWatchlist(movies, watchlistContainer);
+        });
+    } else {
+        watchlistContainer.innerHTML = "<p>Your watchlist is empty.</p>";
+    }
+});
+
+async function fetchMoviesByIds(movieIds) {
+    const movies = [];
+    for (const id of movieIds) {
+        const movie = await fetchMovieDetails(id);
+        movies.push(movie);
+    }
+    return movies;
+}
+
+function displayMoviesInWatchlist(movies, container) {
+    movies.forEach(movie => {
+        const { title, poster_path, vote_average, overview, id } = movie;
+        const movieEl = document.createElement("div");
+        movieEl.classList.add("movie");
+
+        movieEl.innerHTML = `
+            <img src="${poster_path ? IMG_URL + poster_path : "/assets/cinema.jpg"}" alt="${title}">
+            <div class="movie-info">
+                <h3>${title}</h3>
+                <span class="${getColor(vote_average)}">${vote_average}</span>
+            </div>
+            <div class="overview">
+                <h3>${title}</h3>
+                ${overview}
+                <br/> 
+                <button class="know-more" id="${id}">Watch Trailer <i class="fas fa-arrow-right"></i></button>
+            </div>
+        `;
+
+        container.appendChild(movieEl);
+
+        const watchTrailerButton = movieEl.querySelector('.know-more');
+        watchTrailerButton.addEventListener('click', () => {
+            showTrailer(id);
+        });
+    });
+}

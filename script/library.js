@@ -212,15 +212,12 @@ function showMovies(data) {
     const { title, poster_path, vote_average, overview, id } = movie;
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
-    
-    // Create a link element wrapping each movie
+
     const movieLink = document.createElement("a");
-    movieLink.href = `individual.html?id=${id}`; // Replace "individual_page.html" with the actual URL of your individual page
+    movieLink.href = `individual.html?id=${id}`;
 
     movieLink.innerHTML = `
-      <img src="${
-        poster_path ? IMG_URL + poster_path : "/assets/cinema.jpg"
-      }" alt="${title}">
+      <img src="${poster_path ? IMG_URL + poster_path : "/assets/cinema.jpg"}" alt="${title}">
       <div class="movie-info">
         <h3>${title}</h3>
         <span class="${getColor(vote_average)}">${vote_average}</span>
@@ -230,20 +227,42 @@ function showMovies(data) {
         ${overview}
         <br/> 
         <button class="know-more" id="${id}">Watch Trailer <i class="fas fa-arrow-right"></i></button>
+        <button class="add-to-watchlist" data-movie-id="${id}">Add to Watchlist</button>
       </div>
     `;
 
-    movieEl.appendChild(movieLink); // Append the link element to the movie element
-
+    movieEl.appendChild(movieLink);
     main.appendChild(movieEl);
 
     document.getElementById(id).addEventListener("click", () => {
-      console.log(id);
       openNav(movie);
+    });
+
+    const addToWatchlistButton = movieEl.querySelector('.add-to-watchlist');
+    addToWatchlistButton.addEventListener('click', (event) => {
+      
+        event.preventDefault();
+        console.log('Test Watch list')
+    
+        const movieId = event.target.dataset.movieId;
+        
+        let watchlist2 = JSON.parse(localStorage.getItem('watchlist2')) || [];
+        console.log(watchlist2); 
+    
+        // Check if the movieId is not already in the watchlist
+        if (!watchlist2.includes(movieId)) {
+            // Add the movieId to the watchlist
+            watchlist2.push(movieId);
+            console.log(`Added movie with ID ${movieId} to watchlist.`);
+        } else {
+            console.log(`Movie with ID ${movieId} is already in watchlist.`);
+        }
+    
+        // Save the updated watchlist to local storage
+        localStorage.setItem('watchlist2', JSON.stringify(watchlist2));
     });
   });
 }
-
 
 
 const leftArrow = document.getElementById("left-arrow");
@@ -321,3 +340,11 @@ function pageCall(page) {
     getMovies(url);
   }
 }
+
+// function addToWatchlist(movie) {
+//   consol.log('Test Watch list')
+//   let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+//   // watchlist.push(movie);
+//   localStorage.setItem('watchlist', JSON.stringify(watchlist));
+//   updateWatchlistDisplay();
+// }

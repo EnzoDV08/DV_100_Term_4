@@ -1,135 +1,40 @@
-.container {
-    background-color: #1f1f1f;
-    min-height: calc(100vh - 50px);
-    color: white;
-  }
-  
-  .content-container {
-    margin-left: 50px;
-    padding: 50px;
-  }
-  
-  h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .movie-list-item {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    font-size: 1em;
-  }
 
-  body {
-    font-family: 'Nunito', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar {
-    background-color: #007bff;
-    color: #fff;
+.watchlist-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.navbar-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo-container img {
-    width: 50px;
-    height: 50px;
-}
-
-.menu-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-}
-
-.menu-list-item {
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.menu-list-item.active {
-    font-weight: 600;
-}
-
-.profile-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.profile-picture {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.profile-text-container {
-    cursor: pointer;
-}
-
-.profile-dropdown {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    right: 0;
-}
-
-.profile-dropdown a {
-    color: #000;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.profile-dropdown a:hover {
+    overflow-x: auto;
+    gap: 20px; /* Adjust the gap between items */
+    background-color: white;
+  }
+  
+  .watchlist-item {
+    flex: 0 0 auto;
+    width: 200px; /* Adjust the width of each item */
     background-color: #f9f9f9;
-}
-
-.toggle {
-    display: flex;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.toggle-icon {
-    font-size: 24px;
-}
-
-.toggle-ball {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #007bff;
-    position: relative;
-    right: 0;
-    transition: transform 0.2s;
-}
-
-.toggle-ball.active {
-    transform: translateX(30px);
-}
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
   
+  .watchlist-item img {
+    max-width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .movie-info {
+    padding: 10px;
+  }
+  
+  .remove-from-watchlist {
+    background-color: #ff5555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .card-title{
+    color: black;
+  }
