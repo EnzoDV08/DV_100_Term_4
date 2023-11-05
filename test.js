@@ -64,3 +64,27 @@ $(document).ready(function(){
       player.fullscreen(); // Request fullscreen mode
     });
   });
+
+  let isResizing = false;
+let lastDownX = 0;
+
+const container = document.querySelector('.container');
+
+container.addEventListener('mousedown', (e) => {
+  if (e.offsetX > container.offsetWidth - 10) {
+    isResizing = true;
+    lastDownX = e.clientX;
+  }
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (isResizing) {
+    const offset = e.clientX - lastDownX;
+    container.style.width = `${container.offsetWidth + offset}px`;
+    lastDownX = e.clientX;
+  }
+});
+
+document.addEventListener('mouseup', () => {
+  isResizing = false;
+});
