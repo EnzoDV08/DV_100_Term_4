@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap');
 
 .background-image {
   position: fixed;
@@ -14,8 +14,8 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #000;
+  font-family: 'Nunito', sans-serif;
+  background-color: rgb(15, 15, 15);
   margin: 0;
 }
 
@@ -127,4 +127,46 @@ h1 .searchItem {
 
 .add-to-watchlist:hover {
   background-color: #434b7d;
+}
+
+
+.alert-container-2 {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: none;
+}
+
+.alert-container-2.active {
+  display: block;
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(100%);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+
+.alert-message-2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.alert-close-2 {
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
 }

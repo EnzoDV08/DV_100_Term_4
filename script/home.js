@@ -99,10 +99,27 @@ function updateMoviesOnHomepage(movies, container) {
                 ${shortOverview}
                 <br/> 
                 <a href="/pages/individual.html?id=${id}" class="know-more">Watch Trailer</a>
-                <a href="/pages/individual.html?id=${id}" class="know-more-then">Add to watch list</a>
+                <button class="add-to-watchlist" data-movie-id="${id}" data-movie-title="${title}">Add to Watchlist</button>
             </div>
         `;
         main.appendChild(movieListItem);
+
+        const addToWatchlistButton = movieListItem.querySelector('.add-to-watchlist');
+        addToWatchlistButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            const movieId = event.target.dataset.movieId;
+            const movieTitle = event.target.dataset.movieTitle;
+            let watchlist2 = JSON.parse(localStorage.getItem('watchlist2')) || [];
+    
+            if (!watchlist2.includes(movieId)) {
+                watchlist2.push(movieId);
+                showAlert(`Added ${movieTitle} to watchlist.`);
+            } else {
+                showAlert(`${movieTitle} is already in watchlist.`);
+            }
+    
+            localStorage.setItem('watchlist2', JSON.stringify(watchlist2));
+        });
     });
 }
 
@@ -214,4 +231,34 @@ function displayMoviesInWatchlist(movies, container) {
             showTrailer(id);
         });
     });
+}
+
+function showAlert(message) {
+    const alertContainer = document.createElement('div');
+    alertContainer.classList.add('alert-container');
+    alertContainer.innerHTML = `
+        <div class="alert-message">${message}</div>
+        <div class="alert-close"></div>
+    `;
+    document.body.appendChild(alertContainer);
+
+    const alertClose = alertContainer.querySelector('.alert-close');
+
+    alertClose.addEventListener('click', () => {
+        alertContainer.classList.remove('active');
+        setTimeout(() => {
+            alertContainer.remove();
+        }, 500);
+    });
+
+    setTimeout(() => {
+        alertContainer.classList.add('active');
+    }, 100);
+
+    setTimeout(() => {
+        alertContainer.classList.remove('active');
+        setTimeout(() => {
+            alertContainer.remove();
+        }, 500);
+    }, 5000);
 }

@@ -240,29 +240,23 @@ function showMovies(data) {
 
     const addToWatchlistButton = movieEl.querySelector('.add-to-watchlist');
     addToWatchlistButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      const movieId = event.target.dataset.movieId;
       
-        event.preventDefault();
-        console.log('Test Watch list')
+      let watchlist2 = JSON.parse(localStorage.getItem('watchlist2')) || [];
     
-        const movieId = event.target.dataset.movieId;
-        
-        let watchlist2 = JSON.parse(localStorage.getItem('watchlist2')) || [];
-        console.log(watchlist2); 
-    
-        // Check if the movieId is not already in the watchlist
-        if (!watchlist2.includes(movieId)) {
-            // Add the movieId to the watchlist
-            watchlist2.push(movieId);
-            console.log(`Added movie with ID ${movieId} to watchlist.`);
-        } else {
-            console.log(`Movie with ID ${movieId} is already in watchlist.`);
-        }
-    
-        // Save the updated watchlist to local storage
-        localStorage.setItem('watchlist2', JSON.stringify(watchlist2));
+      if (!watchlist2.includes(movieId)) {
+          watchlist2.push(movieId);
+          alert(`Added ${title} to watchlist.`);
+      } else {
+          alert(`${title} is already in watchlist.`);
+      }
+  
+      localStorage.setItem('watchlist2', JSON.stringify(watchlist2));
     });
   });
 }
+
 
 
 const leftArrow = document.getElementById("left-arrow");
@@ -348,3 +342,35 @@ function pageCall(page) {
 //   localStorage.setItem('watchlist', JSON.stringify(watchlist));
 //   updateWatchlistDisplay();
 // }
+
+function showAlert(message) {
+  const alertContainer = document.createElement('div');
+  alertContainer.classList.add('alert-container-2');
+  alertContainer.innerHTML = `
+      <div class="alert-message-2">${message}</div>
+      <div class="alert-close-2"></div>
+  `;
+  document.body.appendChild(alertContainer);
+
+  const alertClose = alertContainer.querySelector('.alert-close');
+
+  alertClose.addEventListener('click', () => {
+      alertContainer.classList.remove('active');
+      setTimeout(() => {
+          alertContainer.remove();
+      }, 500);
+  });
+
+  setTimeout(() => {
+      alertContainer.classList.add('active');
+  }, 100);
+
+  setTimeout(() => {
+      alertContainer.classList.remove('active');
+      setTimeout(() => {
+          alertContainer.remove();
+      }, 500);
+  }, 5000);
+}
+
+showAlert('This is a sample alert message.');

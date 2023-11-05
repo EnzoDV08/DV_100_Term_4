@@ -1,10 +1,13 @@
-
+body{
+  background-color: rgb(15, 15, 15);
+}
 .watchlist-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px; /* Adjust the gap between items */
-    background-color: white;
-  }
+  display: flex;
+  overflow-x: auto;
+  gap: 20px; /* Adjust the gap between items */
+  background-color: white;
+  margin-top: 50px;
+}
   
   .watchlist-item {
     flex: 0 0 auto;
@@ -13,6 +16,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-top: 50px;
   }
   
   .watchlist-item img {
@@ -38,3 +42,5 @@
   .card-title{
     color: black;
   }
+
+ 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="/style/home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="test.js"></script>
+    <script src="/script/home.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div  class="navbar-container">
+            <div class="logo-container">
+                <img class="logo" src="/images/logo.png
+                " alt="Logo">
+            </div>
+            <div  class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item active">Home</li>
+                    <li class="menu-list-item"><a href="/test.html">Movie</a></li>
+                    <li class="menu-list-item">Series</li>
+                    <li class="menu-list-item"><a href="/pages/library.html">Library</a></li>
+                    <li class="menu-list-item"><a href="/pages/watchlist.html">Watchlist</a></li>
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="/images/profile.png" alt="">
+                <div class="profile-text-container" id="profileDropdownButton">
+                    <span class="profile-text">Profile</span>
+                    <i class="fa-solid fa-sort-down"></i>
+                </div>
+                <div class="profile-dropdown" id="profileDropdownContent">
+                    <a href="#">My Account</a>
+                    <a href="#">Settings</a>
+                    <a href="/index.html">Log Out</a>
+                </div>
+            </div>
+                <div class="toggle">
+                    <i class="fa-solid fa-moon toggle-icon"></i>
+                    <i class="fa-solid fa-sun toggle-icon"></i>
+                    <div class="toggle-ball"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="movie-title">Movie Title</h1>
+        <div class="trailer">
+            <div id="player"><div class="trailer">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/0VH9WCFV6XQ?si=DT8Na2awSEmrVrLC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="buttons">
+            <button class="add-to-watchlist">Add to Watchlist</button>
+        </div>
+        <div class="details">
+            <h2>Movie Details</h2>
+            <p> At Freddy Fazbear's Pizzeria, a once-successful but now abandoned family entertainment center, a night security guard desperately attempts to flee but is captured and strapped to a torture device, which mutilates his face and kills him.</p>
+            <p><strong>Release Date:</strong> 27 October, 2023</p>
+            <p><strong>Genre:</strong> Action, Mystery, Thriller</p>
+            <p><strong>Director:</strong> Emma Tammi</p>
+            <p><strong>Starring:</strong> Josh Hutcherson, Matthew Lillard, Elizabeth Lail</p>
+            <p><strong>Rating:</strong> 5.5/10</p>
+        </div>
+    </div>
+    
+</body>
+
+</html>

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -139,11 +142,11 @@ body{
 }
 
 
-
-.featured-content{
+.featured-content {
     height: 70vh;
     padding: 50px;
-  
+    background-position: center;
+    background-size: cover;
 }
 .featured-title{
     width: 200px;
@@ -438,10 +441,13 @@ body{
     bottom: 20px;
     left: 90px; 
     transition: background-color 0.3s ease;
+    width: 80px;
+    height: 38px;
 }
 
 .movie-list-item-watchlist-button:hover {
-    background-color: #0056b3; 
+    background-color:#008080; 
+    transform: scale(1.05); 
 }
 
 
@@ -524,20 +530,26 @@ main {
   }
 
   
-  .know-more, .know-more-then {
+  .know-more {
     display: inline-block;
-    background-color: orange;
-    color: white;
-    font-size: 10px;
+    background-color: rgb(46, 46, 46);
+    color: #fff;
+    font-size: 14px;
     font-weight: bold;
-    border: 0;
-    border-radius: 50px;
+    border: none;
+    border-radius: 5px;
     padding: 10px 20px;
-    margin-top: 5px;
-    width: auto; /* Set width to 'auto' to allow the buttons to adjust based on content */
+    margin-top: 10px;
     text-align: center;
     cursor: pointer;
-  }
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.know-more:hover {
+    background-color: #005959;
+}
+
   
   .footer {
     background-color: #333;
@@ -600,3 +612,63 @@ main {
     color: #ccc;
   }
   
+  .add-to-watchlist {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.add-to-watchlist:hover {
+    background-color: #005959;
+}
+
+.alert-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    display: none;
+}
+
+.alert-container.active {
+    display: block;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.alert-message {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.alert-close {
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
