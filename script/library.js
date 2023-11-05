@@ -214,7 +214,7 @@ function showMovies(data) {
     movieEl.classList.add("movie");
 
     const movieLink = document.createElement("a");
-    movieLink.href = `individual.html?id=${id}`;
+    movieLink.href = `/page/test.html?id=${id}`;
 
     movieLink.innerHTML = `
       <img src="${poster_path ? IMG_URL + poster_path : "/assets/cinema.jpg"}" alt="${title}">
@@ -226,7 +226,11 @@ function showMovies(data) {
         <h3>${title}</h3>
         ${overview}
         <br/> 
-        <button class="know-more" id="${id}">Watch Trailer <i class="fas fa-arrow-right"></i></button>
+        <button class="know-more" id="${id}" data-movie-title="${title}">
+        <a class="watch-trailer-link" href="/pages/test.html">Watch Trailer</a> 
+        <i class="fas fa-arrow-right"></i>
+      </button>
+
         <button class="add-to-watchlist" data-movie-id="${id}">Add to Watchlist</button>
       </div>
     `;
@@ -254,6 +258,8 @@ function showMovies(data) {
   
       localStorage.setItem('watchlist2', JSON.stringify(watchlist2));
     });
+
+   
   });
 }
 
@@ -398,3 +404,78 @@ document.addEventListener('mouseup', () => {
   isResizing = false;
 });
 
+fetchMovies().then(showMovies);
+async function fetchMovies() {
+  try {
+    const response = await fetch(API_URL);
+    const data = await response.json();
+    return data.results;
+  } catch (error) {
+    console.error('Error fetching movies:', error);
+    return [];
+  }
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const wathcTrailerButton = document.querySelector('.know-more');
+
+  wathcTrailerButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      const movieId = event.target.dataset.movieId;
+      const movieTitle = event.target.dataset.movieTitle;
+      sessionStorage.setItem('wathcTrailer', JSON.stringify([movieId, movieTitle]));
+      location.href='/pages/test.html';
+  });
+
+  const params = new URLSearchParams(window.location.search);
+  const movieId = params.get('id');
+
+  fetchMovieDetails(movieId).then(movie => {
+      const container = document.querySelector('.container');
+      const { title, overview, release_date, genres, director, cast, vote_average, runtime } = movie;
+
+      container.innerHTML = `
+          <h1 class="movie-title">${title}</h1>
+          <div class="trailer">
+              <div id="player"></div>
+          </div>
+          <div class="details">
+              <h2>Movie Details</h2>
+              <p>${overview}</p>
+              <p><strong>Release Date:</strong> ${release_date}</p>
+              <p><strong>Genre:</strong> ${genres.map(genre => genre.name).join(', ')}</p>
+              <p><strong>Director:</strong> ${director}</p>
+              <p><strong>Starring:</strong> ${cast.map(actor => actor.name).join(', ')}</p>
+              <p><strong>Rating:</strong> ${vote_average}/10</p>
+              <p><strong>Duration:</strong> ${runtime} minutes</p>
+          </div>
+      `;
+
+      const videoURL = `${BASE_URL}/movie/${movieId}/videos?${API_KEY}`;
+      fetch(videoURL)
+          .then(response => response.json())
+          .then(videoData => {
+              const trailerKey = videoData.results.find(video => video.type === 'Trailer')?.key;
+              const player = document.getElementById('player');
+              player.innerHTML = `
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/${trailerKey}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              `;
+          })
+          .catch(error => {
+              console.error('Error fetching video data:', error);
+          });
+  });
+
+  async function fetchMovieDetails(movieId) {
+      const MOVIE_URL = `${BASE_URL}/movie/${movieId}?${API_KEY}`;
+      try {
+          const response = await fetch(MOVIE_URL);
+          const data = await response.json();
+          return data;
+      } catch (error) {
+          console.error('Error fetching movie details:', error);
+          return null;
+      }
+  }
+});

@@ -170,3 +170,8 @@ h1 .searchItem {
   right: 10px;
   transform: translateY(-50%);
 }
+
+.watch-trailer-link {
+  text-decoration: none;
+  color: white;
+}
