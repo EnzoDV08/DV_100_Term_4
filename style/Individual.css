@@ -1,103 +1,4 @@
-/*
 
-Template Name: MovieWP
-Template Style: Blue
-Author: Vincenzo Piromalli (fr0zen)
-Website: https://moviewp.com/
-Contact: vincenzo.piromalli@gmail.com
-Purchase: https://fr0zen.store/moviewp/
-Support: https://fr0zen.store/contact/
-Copyright: Vincenzo Piromalli
-
-*/
-
-a,
-abbr,
-acronym,
-address,
-applet,
-article,
-aside,
-audio,
-b,
-big,
-blockquote,
-body,
-canvas,
-caption,
-center,
-cite,
-code,
-dd,
-del,
-details,
-dfn,
-div,
-dl,
-dt,
-em,
-embed,
-fieldset,
-figcaption,
-figure,
-footer,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-header,
-hgroup,
-html,
-i,
-iframe,
-img,
-ins,
-kbd,
-label,
-legend,
-li,
-mark,
-menu,
-nav,
-object,
-ol,
-output,
-p,
-pre,
-q,
-ruby,
-s,
-samp,
-section,
-small,
-span,
-strike,
-strong,
-sub,
-summary,
-sup,
-table,
-tbody,
-td,
-tfoot,
-th,
-thead,
-time,
-tr,
-tt,
-u,
-ul,
-var,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline;
-}
 *,
 :after,
 :before {
@@ -107,16 +8,7 @@ body,
 html {
   width: 100%;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
+
 section {
   display: block;
 }
@@ -144,17 +36,7 @@ h4,
 p {
   line-height: 1.5em;
 }
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:after,
-blockquote:before,
-q:after,
-q:before {
-  content: "";
-  content: none;
-}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
